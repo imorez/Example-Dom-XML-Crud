@@ -1,0 +1,27 @@
+<script>
+xmlhttp=new XMLHttpRequest();
+xmlhttp.open("GET","data/data.xml",false);
+xmlhttp.send();
+x = xmlhttp.responseXML;
+function tree(x){
+	for(var i=0;i<=x.length;i++) {
+		if(x[i] && x[i].hasChildNodes()) {
+			tree(x[i].childNodes);
+		}else{
+			if(typeof x[i] !=='undefined' &&
+				x[i].nextSibling!==null && x[i].nextSibling.childNodes.length == 1) {
+				var tagname = ( (x[i].nextSibling) ? x[i].nextSibling.nodeName :"" ),
+				text = (x[i].nextSibling && x[i].nextSibling.textContent) ? x[i].nextSibling.textContent: ""
+				parentId = (x[i].parentElement && x[i].parentElement.id) ? x[i].parentElement.id : "";
+				document.body.innerHTML += "#" + parentId + " - " +tagname + " = " + text + "<br>";
+			}
+		}
+	}
+	document.body.innerHTML += "<br>";
+}
+window.onload= function() { tree(x.childNodes); };
+</script>
+
+
+
+

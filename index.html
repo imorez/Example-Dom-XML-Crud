@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>DomDocument XML manipulation PHP via Javascript Request</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style type="text/css">
+        #form {
+            visibility: hidden;
+            opacity: 0;
+            margin-top: -300px;
+            position: relative;
+            padding: 25px;
+            background-color: #333;
+            color: #fff;
+            max-width: 600px;
+            margin: 0px;
+        }
+        
+        #form:target {
+            visibility: visible;
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 10px;
+            z-index: 99999;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            transition: all 1s;
+        }
+        
+        #form a.close {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            background-color: #000;
+            padding: 4px 6px;
+            font-size: 12px;
+            text-decoration: none;
+            line-height: 1;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="full center">
+            <h1>DomDocument XML manipulation PHP via Javascript Request</h1>
+        </div>
+        <div class="full">
+            <div id="table" class="table">
+                <div id="table-header" class="head"></div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-wrapper" id="form">
+        <form action="javascript:void(0)" method="post" class="switch-form-update" id="form-create">
+            <div><input type="text" name="name" placeholder="Name ..."> </div>
+            <div><input type="text" name="email" placeholder="Email Address ..."></div>
+            <div><input type="text" name="address" placeholder="Address ..."> </div>
+            <div><input type="text" name="country" placeholder="Country ..."> </div>
+            <div><input type="text" name="additional" placeholder="Additional ..." value=""> </div>
+            <div><input type="submit" value="Submit"></div>
+        </form>
+        <a class="close" href="#close">X</a>
+    </div>
+</body>
+<script type="text/javascript" src="dom-request.js"></script>
+</html>
